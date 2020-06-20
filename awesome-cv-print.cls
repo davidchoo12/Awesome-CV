@@ -219,6 +219,7 @@
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skillboldstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
@@ -600,8 +601,7 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} | \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
@@ -662,8 +662,8 @@
 }
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
-\newcommand*{\cvskill}[2]{%
-	\skilltypestyle{#1} & \skillsetstyle{#2} \\
+\newcommand*{\cvskill}[3]{%
+  \skilltypestyle{#1} & \skillboldstyle{#2}\skillsetstyle{#3} \\
 }
 
 % Define an environment for cvitems(for cventry)
