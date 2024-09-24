@@ -4,6 +4,14 @@ A customised fork of [Awesome-CV](https://github.com/posquit0/Awesome-CV)
 
 Inspired by my senior's resumes: [donjar](https://github.com/donjar/Awesome-CV) and [indocomsoft](https://github.com/indocomsoft/Awesome-CV/)
 
+## Installation
+
+On WSL2 ubuntu:
+
+`sudo apt install texlive-xetex texlive-fonts-extra`
+
+This will take some minutes to download and install cos the packages are big. `texlive-xetex` gives the `xelatex` command needed for compiling the pdf, `texlive-fonts-extra` gives font-awesome and source sans pro fonts that I need. I'm sure it's possible to install in a minimal way but not worth the time exploring.
+
 ## Compilation
 `make resume.pdf`
 
@@ -42,3 +50,5 @@ Transcript written on resume.log.
 Makefile:8: recipe for target 'resume.pdf' failed
 make: *** [resume.pdf] Error 1
 ```
+
+For unknown reason, the generated resume.pdf has the config to open bookmarks sidebar when opened with adobe acrobat. This can be updated using adobe acrobat. Open the file, go to File > Properties > Initial View, set Navigation tab to Page Only, then save.
